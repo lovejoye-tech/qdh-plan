@@ -84,6 +84,7 @@
     padding:9px 6px;border-radius:11px;cursor:pointer;font-family:inherit;transition:.18s;
   }
   .tabs button.on{background:#fff;color:var(--ink);box-shadow:0 2px 10px -4px rgba(15,23,42,.25)}
+  @media (max-width:420px){.tabs button{font-size:12px;padding:9px 2px}}
   .view{display:none;animation:fade .28s ease}
   .view.on{display:block}
   @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
@@ -125,6 +126,7 @@
   .day.today{box-shadow:0 0 0 2px var(--c), 0 14px 30px -18px var(--c)}
   .day.done{opacity:.52}
   .day.done .d-title{text-decoration:line-through;text-decoration-color:var(--ink3)}
+  .day.flash{box-shadow:0 0 0 3px rgba(217,119,6,.4),var(--shadow)}
 
   .head{display:flex;align-items:center;gap:13px;padding:14px 14px 14px 18px;cursor:pointer;user-select:none}
   .date{flex:none;width:46px;text-align:center}
@@ -163,6 +165,12 @@
   .sec.no li::before{background:#fda4af}
   .sec.pill li{display:inline-flex;padding:4px 11px;background:var(--cbg);color:var(--c);border-radius:8px;margin:0 6px 6px 0;font-weight:600;font-size:12.5px}
   .sec.pill li::before{display:none}
+  .sec.food h4::before{background:#d97706}
+  .sec.food li{color:#7c4a12}
+  .sec.food b{color:#7c2d12}
+  .sec.food li::before{background:#fbbf24}
+  .sec li.sub{margin-left:12px;font-size:12.5px;color:var(--ink3);padding:1px 0 1px 15px;line-height:1.55}
+  .sec li.sub::before{width:3px;height:3px;background:#d8b98a;top:9px}
   .note{
     margin-top:13px;font-size:12px;color:#6b5d43;background:#fdf8ec;border-left:3px solid #e5c98a;
     padding:9px 12px;border-radius:0 8px 8px 0;line-height:1.62
@@ -197,6 +205,49 @@
   .gear-item.on .box{background:#0d9488;border-color:#0d9488;color:#fff}
   .gear-item.on .g-name{color:var(--ink3);text-decoration:line-through}
   .g-name{font-size:13.5px;color:var(--ink2)}
+
+  .plain-list{margin:0;padding:0;list-style:none}
+  .plain-list li{font-size:13px;color:var(--ink2);padding:8px 0;border-bottom:1px solid #f2f5fa;line-height:1.6}
+  .plain-list li:last-child{border-bottom:0}
+
+  /* ── 补给 ──────────────────────────── */
+  .carb-strip{display:grid;grid-template-columns:repeat(6,1fr);gap:7px}
+  @media (min-width:640px){.carb-strip{grid-template-columns:repeat(9,1fr)}}
+  .carb-cell{
+    border-radius:11px;padding:9px 4px 8px;text-align:center;cursor:pointer;border:1px solid transparent;
+    transition:transform .12s ease,box-shadow .12s ease;background:#fdf6ea
+  }
+  .carb-cell:hover{transform:translateY(-2px);box-shadow:0 6px 14px -8px rgba(120,72,10,.5)}
+  .carb-cell b{display:block;font-size:11px;color:#6b4a12;font-weight:700;letter-spacing:.02em}
+  .carb-cell span{display:block;font-size:12.5px;font-weight:800;color:#3f2a05;letter-spacing:-.02em;margin-top:2px;white-space:nowrap}
+  @media (max-width:640px){
+    .carb-cell{padding:8px 2px 7px}
+    .carb-cell b{font-size:10px}
+    .carb-cell span{font-size:10.5px}
+  }
+  .carb-cell em{display:block;font-size:9.5px;font-style:normal;color:#8a6b3a;margin-top:1px}
+  .carb-cell[data-race]{background:#fee2e2}
+  .carb-cell[data-race] b,.carb-cell[data-race] span{color:#9f1239}
+  .carb-cell.flash{box-shadow:0 0 0 2px #d97706}
+  .carb-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-size:10.5px;color:var(--ink3)}
+  .carb-legend i{display:inline-block;width:9px;height:9px;border-radius:3px;background:#d97706;margin-right:5px;vertical-align:-1px}
+
+  .fuel-grid{display:grid;grid-template-columns:1fr;gap:10px}
+  @media (min-width:560px){.fuel-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (min-width:880px){.fuel-grid{grid-template-columns:repeat(5,1fr)}}
+  .fuel-card{border:1px solid var(--line);border-radius:13px;padding:13px 13px 11px;background:#fffdf8}
+  .fuel-card.peak{background:#fff7ed;border-color:#fed7aa}
+  .fc-top{display:flex;align-items:baseline;gap:6px;margin-bottom:6px}
+  .fc-top b{font-size:13px;color:var(--ink)}
+  .fc-top span{font-size:10.5px;color:#b45309;background:#fef3c7;padding:1px 6px;border-radius:6px;font-weight:700}
+  .fc-num{font-size:25px;font-weight:800;letter-spacing:-.03em;color:#9a3412;line-height:1.1}
+  .fc-num i{font-style:normal;font-size:13px;font-weight:700;margin-left:1px}
+  .fc-lbl{font-size:11px;color:#8a6b3a;margin:2px 0 8px}
+  .fuel-card ul{margin:0;padding:0;list-style:none;border-top:1px dashed #eadcc4;padding-top:7px}
+  .fuel-card li{font-size:11.5px;color:#6b5a3e;padding:2px 0 2px 11px;position:relative;line-height:1.5}
+  .fuel-card li::before{content:"";position:absolute;left:0;top:8px;width:3px;height:3px;border-radius:50%;background:#d8b98a}
+  .tl-table td:first-child{white-space:nowrap;color:#9a3412;width:104px}
+  .tl-table em{font-style:normal;color:var(--ink3);font-size:11.5px}
 
   .link{color:#2563eb;text-decoration:none;font-size:12px}
   details.mini{border-top:1px solid #f2f5fa;padding:11px 0 3px}
@@ -248,6 +299,7 @@
     <button class="on" data-view="timeline">日程</button>
     <button data-view="stats">总览</button>
     <button data-view="gear">装备</button>
+    <button data-view="fuel">补给</button>
     <button data-view="howto">说明</button>
   </nav>
 
@@ -330,17 +382,117 @@
       <div id="gearList" class="gear-wrap"></div>
     </div>
     <div class="panel">
-      <h3>比赛日补给时间线</h3>
+      <h3>比赛日之外的提醒</h3>
+      <div class="p-sub">装备之外只有两件事会毁掉比赛</div>
+      <ul class="plain-list">
+        <li><b>新鞋 / 新袜</b> —— 起泡的位置通常在 12km 之后才出现，来不及补救</li>
+        <li><b>没试过的早餐</b> —— 比赛日肠胃不接受陌生食物，11/28 早上必须演练一次</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ── 补给 ── -->
+  <section class="view" id="view-fuel">
+    <div class="panel">
+      <h3>碳水档位 · 18 天</h3>
+      <div class="p-sub">颜色越深碳水比例越高 · 点一下跳到那天</div>
+      <div id="carbStrip" class="carb-strip"></div>
+      <div class="carb-legend">
+        <span><i style="opacity:.18"></i>50–55% 休息 / 恢复</span>
+        <span><i style="opacity:.45"></i>55–60% 训练日</span>
+        <span><i style="opacity:.7"></i>60–70% 加载前</span>
+        <span><i style="opacity:1"></i>70–75% 加载顶峰</span>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>赛前 5 天怎么吃</h3>
+      <div class="p-sub">11/24 起步 → 11/25–26 顶峰 → 11/27 回落 → 11/28 收口</div>
+      <div class="fuel-grid">
+        <div class="fuel-card">
+          <div class="fc-top"><b>11/24</b><span>准备日</span></div>
+          <div class="fc-num">60–70<i>%</i></div>
+          <div class="fc-lbl">碳水占比开始抬升</div>
+          <ul>
+            <li>蛋白 70–85g（略减）</li>
+            <li>脂肪 20–25%</li>
+            <li>水 2.5–3L · 4–5 餐</li>
+          </ul>
+        </div>
+        <div class="fuel-card peak">
+          <div class="fc-top"><b>11/25</b><span>加载 D1</span></div>
+          <div class="fc-num">70–75<i>%</i></div>
+          <div class="fc-lbl">8–10g/kg → 568–710g</div>
+          <ul>
+            <li>蛋白 60–70g · 脂肪 15–20%</li>
+            <li>白米饭 / 面条 / 香蕉 / 土豆</li>
+            <li>避开全麦、燕麦、豆类</li>
+          </ul>
+        </div>
+        <div class="fuel-card peak">
+          <div class="fc-top"><b>11/26</b><span>加载 D2</span></div>
+          <div class="fc-num">70–75<i>%</i></div>
+          <div class="fc-lbl">体重 +0.5–1kg 属正常</div>
+          <ul>
+            <li>继续米饭 / 面条为主</li>
+            <li>少量多餐 4–5 次</li>
+            <li>不碰炸鸡甜点与酒精</li>
+          </ul>
+        </div>
+        <div class="fuel-card">
+          <div class="fc-top"><b>11/27</b><span>回落</span></div>
+          <div class="fc-num">60–65<i>%</i></div>
+          <div class="fc-lbl">避免赛前腹胀</div>
+          <ul>
+            <li>水降到 2–2.5L</li>
+            <li>14:00 后不摄入咖啡因</li>
+            <li>晚餐清淡易消化</li>
+          </ul>
+        </div>
+        <div class="fuel-card">
+          <div class="fc-top"><b>11/28</b><span>收口</span></div>
+          <div class="fc-num">60<i>%</i></div>
+          <div class="fc-lbl">22:00 后不再进食</div>
+          <ul>
+            <li>水 2L，不宜过量</li>
+            <li>早餐演练比赛日食谱</li>
+            <li>不尝试任何新食物</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>比赛日时间线</h3>
       <div class="p-sub">闹钟设好，不用记</div>
-      <table>
+      <table class="tl-table">
         <tbody>
-          <tr><td>赛前 2.5–3h</td><td>早餐（熟悉的食物，避免高纤维）</td></tr>
+          <tr><td>赛前 2.5–3h</td><td><b>早餐</b> 白粥 / 面条 + 香蕉 + 鸡蛋<br><em>避开全麦、油条煎蛋、乳制品</em></td></tr>
           <tr><td>起跑前 15min</td><td>能量胶 ×1 + 水 150ml</td></tr>
           <tr><td>60min</td><td>能量胶 ×1 + 水</td></tr>
           <tr><td>90min</td><td>能量胶 ×1 + 盐丸 ×1 + 水</td></tr>
+          <tr><td>每个补给站</td><td>小口补水，即使不渴</td></tr>
+          <tr><td>赛后立即</td><td>25–30g 蛋白 + 快碳（恢复黄金窗口）</td></tr>
           <tr><td>全程</td><td>心率 &gt;150 主动降速；每 5km 自查能否完整说一句话</td></tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="panel">
+      <h3>通用原则</h3>
+      <div class="p-sub">训练期与加载期只差在碳水，蛋白反而要降</div>
+      <table>
+        <thead><tr><th>项目</th><th>训练期 11/12–11/23</th><th>加载期 11/24–11/28</th></tr></thead>
+        <tbody>
+          <tr><td>碳水</td><td>50–60%（按当日强度）</td><td><b>60–75%</b></td></tr>
+          <tr><td>蛋白</td><td>85–110g</td><td>60–70g（给碳水腾空间）</td></tr>
+          <tr><td>脂肪</td><td>正常，控制饱和脂肪</td><td>15–25%</td></tr>
+          <tr><td>水</td><td>2.5–3L，全天均匀</td><td>2–3L，睡前 2h 少喝</td></tr>
+          <tr><td>补剂</td><td>鱼油 · 维D · 钙 每日固定</td><td>同左</td></tr>
+          <tr><td>禁忌</td><td>高糖高脂组合、酒精</td><td>新食物、高纤维、咖啡因 14:00 后</td></tr>
+        </tbody>
+      </table>
+      <div class="note">他汀使用背景下，饱和脂肪要长期压住 —— 炸鸡、肥肉、奶油这类「高糖 + 高饱和脂肪」组合在赛前两周都别碰。</div>
     </div>
   </section>
 
@@ -559,6 +711,200 @@ const GEAR = [
   '身份证（领物用）'
 ];
 
+/* ── 补给 / 饮食（来自源计划 15:30 更新） ── */
+const FOOD = {
+  '11-12':[
+    "碳水 50-55%（正常量，无高强度训练）",
+    "蛋白 85-100g（维持量）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 >= 2.5L（全天均匀摄入，非一次性）",
+    "晚餐可稍减碳水，避免睡前腹胀",
+    "避免高糖高脂组合（如炸鸡、甜点），他汀使用者需控制饱和脂肪"
+  ],
+  '11-13':[
+    "碳水 55-60%（跑步日略增，补充肌糖原）",
+    "蛋白 90-110g（跑后需足量补充修复）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "跑前 2h：轻量碳水（香蕉 1 根或白面包 1 片），避免空腹跑",
+    "跑后 30min 内：<b>20-25g 蛋白 + 快碳</b>（乳清蛋白 + 香蕉，或牛奶 + 面包）",
+    "水分 2.5-3L（跑前 200ml，跑后 300ml + 电解质）",
+    "晚餐正常进食，不刻意减少"
+  ],
+  '11-14':[
+    "碳水 50-55%（恢复日正常量）",
+    "蛋白 85-100g（维持量）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 >= 2.5L",
+    "昨日跑步后今日无需额外补充，正常三餐即可",
+    "可适当增加蔬菜摄入（非高纤维粗杂粮），补充维生素与矿物质"
+  ],
+  '11-15':[
+    "碳水 55-60%（跑步日略增）",
+    "蛋白 90-110g（跑后修复）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "跑前 2h：轻量碳水（香蕉或白面包）",
+    "跑后 30min 内：<b>20-25g 蛋白 + 快碳</b>",
+    "水分 2.5-3L",
+    "晚餐正常，对比周五数据后不必调整饮食"
+  ],
+  '11-16':[
+    "碳水 55%（为明日力量训练储备糖原，略增）",
+    "蛋白 90-100g（维持量）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "晚餐适当增加碳水（米饭/面条比平时多半碗）",
+    "水分 2.5L",
+    "避免酒精（影响恢复与力量表现）",
+    "22:30 前入睡，睡眠不足直接影响明日训练质量"
+  ],
+  '11-17':[
+    "碳水 55-60%（力量训练日需充足糖原）",
+    "蛋白 <b>100-120g</b>（力量训练后修复需求更高）",
+    "补剂：<b>镁（训练日补充）</b>、鱼油、维D、钙",
+    "训练前 1.5-2h：<b>中等碳水 + 适量蛋白</b>（如米饭 + 鸡胸肉/鸡蛋，避免空腹训练）",
+    "训练后 30min 内：<b>25-30g 蛋白 + 快碳</b>（乳清蛋白 + 香蕉/白面包，黄金窗口）",
+    "水分 2.5-3L（力量训练出汗量常被低估）",
+    "晚餐继续补充优质蛋白（鱼、鸡胸肉、豆腐）"
+  ],
+  '11-18':[
+    "碳水 50-55%（恢复日正常量）",
+    "蛋白 85-100g（维持量，RDL 后修复）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 2.5L",
+    "若腘绳肌酸痛明显，可适当增加抗炎食物（深海鱼、坚果、橄榄油）",
+    "避免加工肉类（他汀使用者需控制饱和脂肪与钠摄入）"
+  ],
+  '11-19':[
+    "碳水 55-60%（最长跑步日，需充足糖原）",
+    "蛋白 90-110g（跑后修复）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "跑前 2h：<b>香蕉 1 根 + 白面包 1 片</b>（6km 比 5km 多，需更多燃料）",
+    "跑中：如携带水，每 2km 小口补水（6km 建议带 150ml）",
+    "跑后 30min 内：<b>20-25g 蛋白 + 快碳</b>",
+    "水分 2.5-3L",
+    "晚餐正常，6km 消耗额外 350-400kcal，无需刻意少吃"
+  ],
+  '11-20':[
+    "碳水 50-55%（恢复日正常量）",
+    "蛋白 85-100g（维持量）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 2.5L",
+    "6km 后今日正常三餐，无需额外补充",
+    "可适当增加富含胶原蛋白食物（猪蹄汤、鱼皮），辅助关节恢复"
+  ],
+  '11-21':[
+    "碳水 55-60%（力量训练日）",
+    "蛋白 <b>100-110g</b>（背部肌群修复）",
+    "补剂：<b>镁（训练日补充）</b>、鱼油、维D、钙",
+    "训练前 1.5-2h：中等碳水 + 适量蛋白",
+    "训练后 30min 内：<b>20-25g 蛋白 + 快碳</b>",
+    "水分 2.5-3L",
+    "背部训练消耗不如腿部大，无需刻意多吃，正常三餐即可"
+  ],
+  '11-22':[
+    "碳水 50-55%（恢复日正常量）",
+    "蛋白 85-100g（维持量）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 2.5L",
+    "背部训练后正常三餐",
+    "避免生冷食物（秋冬肠胃敏感）"
+  ],
+  '11-23':[
+    "碳水 55%（最后一次跑步日，略增补充肌糖原）",
+    "蛋白 85-100g（跑后修复）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "跑前 2h：轻量碳水（香蕉）",
+    "跑后 30min 内：<b>20g 蛋白 + 快碳</b>",
+    "水分 2.5L",
+    "晚餐正常，无需额外补充（4km 消耗有限）"
+  ],
+  '11-24':[
+    "碳水 <b>60-70%</b>（碳水加载准备日，开始提升比例）",
+    "蛋白 <b>70-85g</b>（略减，给碳水腾空间）",
+    "脂肪 20-25%（适量减少）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 2.5-3L",
+    "<b>少量多餐</b>（4-5 餐），避免一次吃太多腹胀",
+    "§示例餐单：",
+    "§早餐：白粥 + 馒头 + 鸡蛋",
+    "§加餐：香蕉 1 根",
+    "§午餐：米饭（比平时多半碗）+ 瘦肉 + 青菜",
+    "§加餐：白面包 1 片 + 蜂蜜",
+    "§晚餐：面条 + 少量蛋白"
+  ],
+  '11-25':[
+    "碳水 <b>70-75%</b>（碳水加载第 1 天，最大化糖原储备）",
+    "蛋白 <b>60-70g</b>（维持最低量即可）",
+    "脂肪 <b>15-20%</b>（大幅降低）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "<b>碳水目标：每公斤体重 8-10g</b>（71kg → <b>568-710g 碳水/日</b>）",
+    "<b>优先选择</b>：白米饭、面条、香蕉、白面包、土豆（低纤维、易消化）",
+    "<b>避免</b>：全麦面包、燕麦、豆类、十字花科蔬菜（高纤维产气）",
+    "水分 2.5-3L",
+    "少量多餐（4-5 餐）"
+  ],
+  '11-26':[
+    "碳水 <b>70-75%</b>（碳水加载第 2 天，继续最大化糖原）",
+    "蛋白 <b>60-70g</b>",
+    "脂肪 <b>15-20%</b>",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "<b>继续高碳水</b>：米饭、面条为主",
+    "<b>少量多餐</b>（4-5 餐），避免一次吃太多",
+    "体重可能增加 0.5-1kg（水分和糖原，正常，不必担心）",
+    "水分 2.5-3L",
+    "避免高糖高脂组合（炸鸡、甜点）和酒精"
+  ],
+  '11-27':[
+    "碳水 <b>60-65%</b>（略降，避免赛前腹胀）",
+    "蛋白 <b>60-70g</b>",
+    "脂肪 20-25%（回升至正常）",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 2-2.5L（避免睡前频繁起夜）",
+    "<b>避免新食物</b>（防止肠胃不适）",
+    "<b>避免咖啡因 14:00 后摄入</b>（保证睡眠质量）",
+    "晚餐清淡易消化（面条/粥 + 少量蛋白），避免油腻"
+  ],
+  '11-28':[
+    "碳水 <b>60%</b>",
+    "蛋白 <b>60-70g</b>",
+    "脂肪 20-25%",
+    "补剂：鱼油、维D、钙（每日固定）",
+    "水分 2L（避免过量）",
+    "晚餐清淡易消化，22:00 后不再进食",
+    "<b>早餐模拟比赛日</b>（吃你计划比赛日吃的食物，测试肠胃反应）"
+  ],
+  '11-29':[
+    "<b>早餐（赛前 2.5-3h）</b>：熟悉食物，高碳水低纤维",
+    "推荐：白粥/面条 + 香蕉 1 根 + 鸡蛋 1 个",
+    "<b>避免</b>：高纤维（全麦面包、燕麦）、高脂（油条、煎蛋）、乳制品（乳糖不耐风险）",
+    "<b>起跑前 15min</b>：能量胶 1 支 + 150ml 水",
+    "<b>60min</b>：能量胶 1 支 + 水",
+    "<b>90min</b>：能量胶 1 支 + 盐丸 1 粒 + 水",
+    "<b>赛后立即</b>：25-30g 蛋白 + 快碳（恢复黄金窗口）",
+    "比赛中每补给站小口补水（即使不渴），避免脱水"
+  ]
+};
+
+const CARB_PCT = {
+  '11-12':[50, 55],
+  '11-13':[55, 60],
+  '11-14':[50, 55],
+  '11-15':[55, 60],
+  '11-16':[55, 55],
+  '11-17':[55, 60],
+  '11-18':[50, 55],
+  '11-19':[55, 60],
+  '11-20':[50, 55],
+  '11-21':[55, 60],
+  '11-22':[50, 55],
+  '11-23':[55, 55],
+  '11-24':[60, 70],
+  '11-25':[70, 75],
+  '11-26':[70, 75],
+  '11-27':[60, 65],
+  '11-28':[60, 60],
+  '11-29':null
+};
+
 const RACE = new Date(2026,10,29);
 const START = new Date(2026,11-1,12);
 const WEEK_LABEL = {1:'第 1 周', 2:'第 2 周', 3:'第 3 周'};
@@ -592,6 +938,7 @@ function dayHTML(d){
       <div class="sec"><h4>目标</h4><ul>${d.goals.map(x=>`<li>${x}</li>`).join('')}</ul></div>
       <div class="sec no"><h4>禁忌</h4><ul>${d.no.map(x=>`<li>${x}</li>`).join('')}</ul></div>
       <div class="sec"><h4>重点关注</h4><ul>${d.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      ${FOOD[d.id]?`<div class="sec food"><h4>补给 / 饮食</h4><ul>${FOOD[d.id].map(x=>x[0]==='§'?`<li class="sub">${x.slice(1)}</li>`:`<li>${x}</li>`).join('')}</ul></div>`:''}
       ${d.note?`<div class="note">${d.note}</div>`:''}
     </div></div>
   </article>`;
@@ -705,6 +1052,39 @@ gl.addEventListener('click', e=>{
 /* 未选项目 */
 document.getElementById('skipList').innerHTML = SKIPS.map(([t,r])=>
   `<details class="mini"><summary>${t}</summary><p>${r}</p></details>`).join('');
+
+/* ═══════════ 补给：碳水档位 ═══════════ */
+const strip = document.getElementById('carbStrip');
+strip.innerHTML = DAYS.map(d=>{
+  const p = CARB_PCT[d.id];
+  if(!p) return `<div class="carb-cell" data-race data-jump="${d.id}"><b>${d.d}</b><span style="font-size:11px">比赛</span></div>`;
+  const mid = (p[0]+p[1])/2;
+  const t = Math.max(0, Math.min(1, (mid-50)/24));
+  const label = p[0]===p[1] ? p[0]+'%' : p[0]+'–'+p[1]+'%';
+  return `<div class="carb-cell" data-jump="${d.id}"
+    style="background:rgba(217,119,6,${(0.09+0.61*t).toFixed(2)})">
+    <b>${d.d}</b><span>${label}</span></div>`;
+}).join('');
+
+strip.addEventListener('click', e=>{
+  const c = e.target.closest('[data-jump]');
+  if(!c) return;
+  jumpTo(c.dataset.jump);
+});
+
+function jumpTo(id){
+  document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on', x.dataset.view==='timeline'));
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on', v.id==='view-timeline'));
+  document.querySelector('#filters [data-f="all"]').click();
+  const card = document.querySelector(`.day[data-id="${id}"]`);
+  if(!card) return;
+  if(!card.classList.contains('open')) card.querySelector('.head').click();
+  setTimeout(()=>{
+    card.scrollIntoView({behavior:'smooth', block:'center'});
+    card.classList.add('flash');
+    setTimeout(()=>card.classList.remove('flash'), 1400);
+  }, 80);
+}
 
 /* 重置 */
 document.getElementById('resetBtn').addEventListener('click', ()=>{
