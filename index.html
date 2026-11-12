@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>千岛湖半马 · 赛前 3 周训练日程</title>
+<meta name="theme-color" content="#101a33">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="千岛湖半马">
+<meta name="description" content="2026-11-29 千岛湖半程马拉松，赛前 3 周每日训练安排：跑步 / 力量 / 垫上 / 休息，含打卡与装备清单。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23101a33'/%3E%3Ctext x='50' y='70' font-size='52' text-anchor='middle'%3E%F0%9F%8F%83%3C/text%3E%3C/svg%3E">
+<style>
+  :root{
+    --bg:#f4f6fb;
+    --card:#ffffff;
+    --ink:#0f172a;
+    --ink2:#475569;
+    --ink3:#94a3b8;
+    --line:#e6ebf4;
+    --run:#2563eb;
+    --run-bg:#eaf1ff;
+    --lift:#ea580c;
+    --lift-bg:#fff0e6;
+    --back:#7c3aed;
+    --back-bg:#f2ecff;
+    --mob:#0d9488;
+    --mob-bg:#e4f7f4;
+    --rest:#64748b;
+    --rest-bg:#eef1f6;
+    --race:#e11d48;
+    --race-bg:#ffe9ee;
+    --radius:18px;
+    --shadow:0 1px 2px rgba(15,23,42,.04),0 8px 24px -12px rgba(15,23,42,.18);
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;padding:0}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,sans-serif;
+    background:
+      radial-gradient(900px 500px at 12% -8%, #e8edff 0%, transparent 60%),
+      radial-gradient(800px 500px at 100% 0%, #ffeee6 0%, transparent 55%),
+      var(--bg);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.55;
+    padding-bottom:80px;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:20px 16px 0}
+
+  /* ── 顶部 ───────────────────────────── */
+  .hero{
+    background:linear-gradient(135deg,#101a33 0%,#1d2b52 55%,#2b3d6b 100%);
+    color:#fff;border-radius:24px;padding:22px 22px 18px;
+    box-shadow:0 20px 40px -24px rgba(16,26,51,.7);
+    position:relative;overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-70px;top:-90px;width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle,rgba(255,255,255,.16),transparent 65%);
+  }
+  .hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;position:relative;z-index:1}
+  .eyebrow{font-size:11.5px;letter-spacing:.14em;color:#9fb0d8;font-weight:600;margin-bottom:8px}
+  h1{margin:0;font-size:25px;letter-spacing:.01em;font-weight:700}
+  .sub{margin-top:7px;font-size:13px;color:#b8c5e4}
+  .count{text-align:right;flex:none;padding-top:2px}
+  .count .num{font-size:44px;font-weight:800;line-height:.95;letter-spacing:-.03em;
+    background:linear-gradient(180deg,#fff,#a9c2ff);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .count .unit{font-size:11.5px;color:#9fb0d8;letter-spacing:.08em;margin-top:4px}
+  .hero-bar{height:6px;border-radius:99px;background:rgba(255,255,255,.14);margin:18px 0 10px;overflow:hidden;position:relative;z-index:1}
+  .hero-bar i{display:block;height:100%;width:0;border-radius:99px;
+    background:linear-gradient(90deg,#67e8c0,#7aa2ff);transition:width .5s ease}
+  .hero-foot{display:flex;justify-content:space-between;font-size:11.5px;color:#93a6cf;position:relative;z-index:1;gap:10px;flex-wrap:wrap}
+
+  /* ── Tab ────────────────────────────── */
+  .tabs{
+    position:sticky;top:0;z-index:20;display:flex;gap:4px;padding:10px 0;
+    margin-top:6px;background:linear-gradient(180deg,rgba(244,246,251,.96) 65%,rgba(244,246,251,0));
+    backdrop-filter:blur(8px);
+  }
+  .tabs button{
+    flex:1;border:0;background:transparent;color:var(--ink2);font-size:13.5px;font-weight:600;
+    padding:9px 6px;border-radius:11px;cursor:pointer;font-family:inherit;transition:.18s;
+  }
+  .tabs button.on{background:#fff;color:var(--ink);box-shadow:0 2px 10px -4px rgba(15,23,42,.25)}
+  .view{display:none;animation:fade .28s ease}
+  .view.on{display:block}
+  @keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+  /* ── 筛选 ───────────────────────────── */
+  .filters{display:flex;gap:7px;overflow-x:auto;padding:4px 0 14px;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .chip{
+    border:1px solid var(--line);background:#fff;color:var(--ink2);font-family:inherit;
+    font-size:12.5px;font-weight:600;padding:7px 13px;border-radius:99px;cursor:pointer;
+    white-space:nowrap;transition:.16s;display:flex;align-items:center;gap:6px
+  }
+  .chip i{width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
+  .chip.on{background:var(--ink);color:#fff;border-color:var(--ink)}
+
+  /* ── 周分组 ─────────────────────────── */
+  .week{margin-bottom:26px}
+  .week-head{display:flex;align-items:baseline;gap:10px;margin:0 2px 10px}
+  .week-head h2{font-size:13px;margin:0;letter-spacing:.06em;color:var(--ink2);font-weight:700}
+  .week-head span{font-size:11.5px;color:var(--ink3)}
+  .week-head .wk-bar{margin-left:auto;font-size:11px;color:var(--ink3);font-variant-numeric:tabular-nums}
+  .wk-note{font-style:normal;font-size:10.5px;color:var(--ink3);background:#fff;border:1px solid var(--line);
+    padding:2px 8px;border-radius:99px;letter-spacing:.01em;white-space:nowrap}
+  @media (max-width:430px){.wk-note{display:none}}
+
+  /* ── 卡片 ───────────────────────────── */
+  .day{
+    background:var(--card);border-radius:var(--radius);border:1px solid var(--line);
+    margin-bottom:10px;box-shadow:var(--shadow);overflow:hidden;position:relative;
+    transition:box-shadow .2s, transform .2s, opacity .2s;scroll-margin-top:78px;
+  }
+  .day::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--c,var(--rest))}
+  .day[data-type="run"]{--c:var(--run);--cbg:var(--run-bg)}
+  .day[data-type="lift"]{--c:var(--lift);--cbg:var(--lift-bg)}
+  .day[data-type="back"]{--c:var(--back);--cbg:var(--back-bg)}
+  .day[data-type="mob"]{--c:var(--mob);--cbg:var(--mob-bg)}
+  .day[data-type="rest"],.day[data-type="misc"]{--c:var(--rest);--cbg:var(--rest-bg)}
+  .day[data-type="race"]{--c:var(--race);--cbg:var(--race-bg)}
+  .day.today{box-shadow:0 0 0 2px var(--c), 0 14px 30px -18px var(--c)}
+  .day.done{opacity:.52}
+  .day.done .d-title{text-decoration:line-through;text-decoration-color:var(--ink3)}
+
+  .head{display:flex;align-items:center;gap:13px;padding:14px 14px 14px 18px;cursor:pointer;user-select:none}
+  .date{flex:none;width:46px;text-align:center}
+  .date .d{font-size:21px;font-weight:750;line-height:1.05;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+  .date .w{font-size:10.5px;color:var(--ink3);letter-spacing:.06em;margin-top:2px}
+  .main{flex:1;min-width:0}
+  .d-title{font-size:14.5px;font-weight:650;display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+  .tag{font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:6px;background:var(--cbg);color:var(--c);letter-spacing:.02em}
+  .tag.ghost{background:#fff;border:1px solid var(--line);color:var(--ink3);font-weight:600}
+  .now{font-size:10px;font-weight:800;color:#fff;background:var(--c);padding:2px 7px;border-radius:6px;letter-spacing:.06em}
+  .meta{font-size:11.5px;color:var(--ink3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+
+  .tick{
+    flex:none;width:26px;height:26px;border-radius:50%;border:1.8px solid #d7dfec;background:#fff;
+    display:flex;align-items:center;justify-content:center;cursor:pointer;transition:.18s;
+    color:transparent;font-size:13px;font-weight:800
+  }
+  .tick:hover{border-color:var(--c)}
+  .done .tick{background:var(--c);border-color:var(--c);color:#fff}
+  .chev{flex:none;color:#c3cddd;font-size:16px;transition:transform .25s;margin-left:-4px}
+
+  .body{max-height:0;overflow:hidden;transition:max-height .34s ease}
+  .body-in{padding:0 18px 16px 32px}
+
+  .sec{margin-top:13px}
+  .sec h4{
+    margin:0 0 7px;font-size:11px;font-weight:800;letter-spacing:.1em;color:var(--ink3);
+    display:flex;align-items:center;gap:6px
+  }
+  .sec h4::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--c)}
+  .sec ul{margin:0;padding:0;list-style:none}
+  .sec li{font-size:13.5px;color:var(--ink2);padding:3px 0 3px 15px;position:relative;line-height:1.6}
+  .sec li::before{content:"";position:absolute;left:2px;top:11px;width:4px;height:4px;border-radius:50%;background:#cbd5e1}
+  .sec.no h4::before{background:#f43f5e}
+  .sec.no li{color:#8a4a51}
+  .sec.no li::before{background:#fda4af}
+  .sec.pill li{display:inline-flex;padding:4px 11px;background:var(--cbg);color:var(--c);border-radius:8px;margin:0 6px 6px 0;font-weight:600;font-size:12.5px}
+  .sec.pill li::before{display:none}
+  .note{
+    margin-top:13px;font-size:12px;color:#6b5d43;background:#fdf8ec;border-left:3px solid #e5c98a;
+    padding:9px 12px;border-radius:0 8px 8px 0;line-height:1.62
+  }
+
+  .hint{text-align:center;font-size:12px;color:var(--ink3);padding:8px 0 24px}
+
+  /* ── 汇总 / 装备 ────────────────────── */
+  .panel{background:#fff;border-radius:var(--radius);border:1px solid var(--line);box-shadow:var(--shadow);padding:18px;margin-bottom:14px}
+  .panel h3{margin:0 0 4px;font-size:15px}
+  .panel .p-sub{font-size:12px;color:var(--ink3);margin-bottom:14px}
+  table{width:100%;border-collapse:collapse;font-size:13px;font-variant-numeric:tabular-nums}
+  th{text-align:left;font-size:11px;letter-spacing:.05em;color:var(--ink3);font-weight:700;padding:0 0 8px;border-bottom:1px solid var(--line)}
+  td{padding:9px 0;border-bottom:1px solid #f2f5fa;color:var(--ink2)}
+  tr:last-child td{border-bottom:0}
+  td:first-child{color:var(--ink);font-weight:600}
+  .num-c{text-align:center}
+
+  .stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:9px;margin-bottom:14px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:14px;padding:12px 10px;text-align:center;box-shadow:var(--shadow)}
+  .stat b{display:block;font-size:20px;letter-spacing:-.02em}
+  .stat span{font-size:10.5px;color:var(--ink3);letter-spacing:.04em}
+
+  .gear-wrap{display:grid;grid-template-columns:1fr;gap:0 26px}
+  @media (min-width:640px){.gear-wrap{grid-template-columns:1fr 1fr}}
+  .gear-prog{display:flex;align-items:center;gap:10px;font-size:11.5px;color:var(--ink3);margin-bottom:4px}
+  .gear-prog .bar{flex:1;height:4px;border-radius:99px;background:#eef1f6;overflow:hidden}
+  .gear-prog .bar i{display:block;height:100%;width:0;background:#0d9488;border-radius:99px;transition:width .35s ease}
+  .gear-item{display:flex;align-items:center;gap:11px;padding:11px 2px;border-bottom:1px solid #f2f5fa;cursor:pointer}
+  .gear-item:last-child{border-bottom:0}
+  .box{width:21px;height:21px;border-radius:6px;border:1.8px solid #d7dfec;flex:none;display:flex;align-items:center;justify-content:center;color:transparent;font-size:12px;font-weight:800;transition:.16s}
+  .gear-item.on .box{background:#0d9488;border-color:#0d9488;color:#fff}
+  .gear-item.on .g-name{color:var(--ink3);text-decoration:line-through}
+  .g-name{font-size:13.5px;color:var(--ink2)}
+
+  .link{color:#2563eb;text-decoration:none;font-size:12px}
+  details.mini{border-top:1px solid #f2f5fa;padding:11px 0 3px}
+  details.mini summary{font-size:12.5px;color:var(--ink2);cursor:pointer;font-weight:600;list-style:none}
+  details.mini summary::-webkit-details-marker{display:none}
+  details.mini summary::before{content:"▸ ";color:var(--ink3)}
+  details.mini[open] summary::before{content:"▾ "}
+  details.mini p{font-size:12.5px;color:var(--ink2);margin:8px 0 0;padding-left:14px;line-height:1.65}
+
+  @media (max-width:520px){
+    .wrap{padding:14px 12px 0}
+    .hero{padding:18px 18px 15px;border-radius:20px}
+    h1{font-size:21px}
+    .count .num{font-size:38px}
+    .body-in{padding-left:20px}
+    .stat-row{grid-template-columns:repeat(2,1fr)}
+  }
+  @media print{
+    body{background:#fff}
+    .tabs,.filters,.tick,.chev{display:none!important}
+    .body{max-height:none!important}
+    .day{break-inside:avoid;box-shadow:none}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <div class="hero-top">
+      <div>
+        <div class="eyebrow">赛前 3 周 · 减量不减频</div>
+        <h1>千岛湖半程马拉松</h1>
+        <div class="sub">2026-11-29 周日 · 21.0975 km · 训练哲学：间隔零容忍，他汀约束优先</div>
+      </div>
+      <div class="count">
+        <div class="num" id="cdNum">—</div>
+        <div class="unit" id="cdUnit">天后起跑</div>
+      </div>
+    </div>
+    <div class="hero-bar"><i id="cdBar"></i></div>
+    <div class="hero-foot">
+      <span id="pgText">已完成 0 / 18 天</span>
+      <span id="todayText"></span>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="on" data-view="timeline">日程</button>
+    <button data-view="stats">总览</button>
+    <button data-view="gear">装备</button>
+    <button data-view="howto">说明</button>
+  </nav>
+
+  <!-- ── 日程 ── -->
+  <section class="view on" id="view-timeline">
+    <div class="filters" id="filters">
+      <button class="chip on" data-f="all">全部 18 天</button>
+      <button class="chip" data-f="run"><i style="color:#2563eb"></i>跑步</button>
+      <button class="chip" data-f="lift"><i style="color:#ea580c"></i>腿部</button>
+      <button class="chip" data-f="back"><i style="color:#7c3aed"></i>背部</button>
+      <button class="chip" data-f="mob"><i style="color:#0d9488"></i>垫上</button>
+      <button class="chip" data-f="rest"><i style="color:#64748b"></i>休息</button>
+      <button class="chip" data-f="race"><i style="color:#e11d48"></i>比赛</button>
+    </div>
+    <div id="timeline"></div>
+    <div class="hint">点卡片展开详情 · 点右侧圆圈打卡（自动保存在本机）</div>
+  </section>
+
+  <!-- ── 总览 ── -->
+  <section class="view" id="view-stats">
+    <div class="stat-row">
+      <div class="stat"><b>20</b><span>总跑量 km</span></div>
+      <div class="stat"><b>3</b><span>力量课次</span></div>
+      <div class="stat"><b>6</b><span>垫上课次</span></div>
+      <div class="stat"><b>6</b><span>完全休息</span></div>
+    </div>
+
+    <div class="panel">
+      <h3>三周训练量</h3>
+      <div class="p-sub">总量刻意压低：维持 > 提升</div>
+      <table>
+        <thead><tr><th>项目</th><th class="num-c">第1周</th><th class="num-c">第2周</th><th class="num-c">第3周</th><th class="num-c">合计</th></tr></thead>
+        <tbody>
+          <tr><td>跑步</td><td class="num-c">10 km</td><td class="num-c">10 km</td><td class="num-c">0</td><td class="num-c"><b>20 km</b></td></tr>
+          <tr><td>力量 · 腿部</td><td class="num-c">1</td><td class="num-c">0</td><td class="num-c">0</td><td class="num-c"><b>1</b></td></tr>
+          <tr><td>力量 · 背部</td><td class="num-c">1 ✅</td><td class="num-c">1</td><td class="num-c">0</td><td class="num-c"><b>2</b></td></tr>
+          <tr><td>抗阻 / 垫上</td><td class="num-c">2</td><td class="num-c">3</td><td class="num-c">0</td><td class="num-c"><b>5</b></td></tr>
+          <tr><td>完全休息</td><td class="num-c">3</td><td class="num-c">2</td><td class="num-c">5</td><td class="num-c"><b>10</b></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>三条硬约束</h3>
+      <div class="p-sub">其它一切都可以让步，这三条不行</div>
+      <table>
+        <tbody>
+          <tr><td>跑 → 力量</td><td>≥ 30h</td><td style="color:#0d9488">腿部 11/17 · 背部 11/21 均已满足</td></tr>
+          <tr><td>力量 → 跑</td><td>≥ 30h</td><td style="color:#0d9488">11/19 距 11/17 已 48h</td></tr>
+          <tr><td>最后一次跑步 → 比赛</td><td>≥ 5 天</td><td style="color:#0d9488">11/23 → 11/29，6 天</td></tr>
+          <tr><td>正式力量训练 ≠ 同日垫上</td><td>0 叠加</td><td style="color:#0d9488">11/17、11/21 均单独安排</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="panel">
+      <h3>刻意没安排的项目</h3>
+      <div class="p-sub">看到清单里没有，不是漏了</div>
+      <div id="skipList"></div>
+    </div>
+
+    <div class="panel">
+      <h3>已执行记录</h3>
+      <table>
+        <tbody>
+          <tr><td>11/04 周二</td><td>背部力量（固定模板，组数 -2）</td><td style="color:#0d9488">✅</td></tr>
+          <tr><td>11/05–11/10</td><td>完全休息 / 轻度活动</td><td style="color:#0d9488">✅</td></tr>
+          <tr><td>11/11 周三</td><td>背部力量（固定模板，组数 -2）</td><td style="color:#0d9488">✅</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── 装备 ── -->
+  <section class="view" id="view-gear">
+    <div class="panel">
+      <h3>装备清单</h3>
+      <div class="p-sub">11/28 周六晚必须全部就位 · 勾选状态自动保存</div>
+      <div class="gear-prog"><span id="gearProgTxt">已备齐 0 / 10</span><span class="bar"><i id="gearProgBar"></i></span></div>
+      <div id="gearList" class="gear-wrap"></div>
+    </div>
+    <div class="panel">
+      <h3>比赛日补给时间线</h3>
+      <div class="p-sub">闹钟设好，不用记</div>
+      <table>
+        <tbody>
+          <tr><td>赛前 2.5–3h</td><td>早餐（熟悉的食物，避免高纤维）</td></tr>
+          <tr><td>起跑前 15min</td><td>能量胶 ×1 + 水 150ml</td></tr>
+          <tr><td>60min</td><td>能量胶 ×1 + 水</td></tr>
+          <tr><td>90min</td><td>能量胶 ×1 + 盐丸 ×1 + 水</td></tr>
+          <tr><td>全程</td><td>心率 &gt;150 主动降速；每 5km 自查能否完整说一句话</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ── 说明 ── -->
+  <section class="view" id="view-howto">
+    <div class="panel">
+      <h3>这套计划在防什么</h3>
+      <div class="p-sub">理解逻辑，比记住条目更有用</div>
+      <table>
+        <tbody>
+          <tr><td>减量不减频</td><td>总量砍掉，但训练节奏保持不变，避免"休息两天身体变钝"。</td></tr>
+          <tr><td>心率闸门 152</td><td>他汀使用背景下，超过闸门意味着恢复代价陡增，收益为负。</td></tr>
+          <tr><td>垫上代替纯休息</td><td>负荷低于走路，能维持髋/核心习惯，且不产生恢复债。</td></tr>
+          <tr><td>赛前 6 天无跑</td><td>让肌糖原、肌腱、神经系统同时归零，换取比赛日满格。</td></tr>
+          <tr><td>碳水加载 8–10g/kg</td><td>71kg → 568–710g/日。体重 +0.5–1kg 是糖原和水，正常。</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h3>调整触发条件</h3>
+      <div class="p-sub">出现任一条，先降级再谈训练</div>
+      <table>
+        <tbody>
+          <tr><td>晨脉连续 2 天 &gt;58</td><td>腿部峰值降至 40kg</td></tr>
+          <tr><td>晨脉 &gt;60</td><td>周六背部训练再减 1 组</td></tr>
+          <tr><td>RDL 后酸痛 &gt;72h</td><td>下次 RDL 峰值从 40kg 起步</td></tr>
+          <tr><td>6km 后心率漂移 &gt;5bpm</td><td>疲劳未恢复，缩短下一次跑量</td></tr>
+          <tr><td>垫上做完感到疲劳</td><td>前一晚跑步恢复不足，需下调</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="panel">
+      <h3>关于骑行</h3>
+      <p style="font-size:13px;color:var(--ink2);margin:0 0 10px">计划内 <b>0 次骑行</b>。唯一例外：某个休息日（如 11/16 或 11/20）状态极好、晨脉正常、无疲劳感且强烈想骑 — 可替换为 <b>30min 养生 Z2</b>（心率 &lt;140，功率 &lt;160W，平路）。</p>
+      <p style="font-size:12.5px;color:#8a4a51;margin:0">这属于"可选替换"而非计划内安排；一旦执行需告知，后续间隔要相应调整。</p>
+    </div>
+    <div style="text-align:center;padding:10px 0 20px">
+      <button id="resetBtn" style="border:1px solid var(--line);background:#fff;color:var(--ink3);font-family:inherit;font-size:12px;padding:8px 16px;border-radius:99px;cursor:pointer">清除打卡与装备勾选</button>
+    </div>
+  </section>
+
+</div>
+
+<script>
+/* ═══════════ 数据 ═══════════ */
+const DAYS = [
+{
+  id:'11-12', d:'11/12', wd:'周四', type:'mob', title:'抗阻 / 垫上运动', tag:'标准版',
+  meta:'臀中肌激活 · 核心稳定 · 15–20min', week:1,
+  items:['抗阻 / 垫上运动（标准版）'],
+  goals:['臀中肌激活（蚌式）→ 改善跑步膝外翻','核心抗伸展 / 抗旋转（平板、鸟狗）→ 维持躯干稳定','后链轻激活（臀桥）→ 为下周腿部力量预热','小腿维护（提踵）→ 预防跟腱紧张','总时长 ≤20min，RPE ≤3/10'],
+  no:['禁止任何动作做到力竭（保留 2–3 次余量）','禁止屏息','禁止在已有酸痛部位强行拉伸或加量','禁止与其他训练叠加'],
+  focus:['蚌式：感受臀中肌外侧发力，慢速控制','直腿抬高：腰部贴地，抬至 45° 即可','臀桥：顶峰肩胛–膝呈直线，夹臀 1 秒','侧桥：身体成直线，弹力带持续阻力','平板：腰不塌，呼吸自然','鸟狗：对侧伸展时躯干无旋转','提踵：全幅度，慢速离心','做完应像"热身一组"，不应疲劳']
+},
+{
+  id:'11-13', d:'11/13', wd:'周五', type:'run', title:'轻松跑 5km', tag:'跑步',
+  meta:'7:30/km · 平均心率 <140 · 峰值 <152', week:1,
+  items:['轻松跑 5.0km','当晚可选：小腿提踵 15 次 × 2 组'],
+  goals:['配速 7:30/km（每公里 7:15–7:45）','平均心率 <140，峰值 <152（闸门）','步频 170+，垂直振幅 <80mm','检验 11/03 最后一跑后的心肺维持'],
+  no:['禁止起跑过快（前 1km 不超过 7:15）','禁止后半段加速（最后 1km 不超过 7:20）','禁止心率突破 152','禁止因"状态好"而加量'],
+  focus:['前 1km 心率爬坡是否平缓（<130）','压住"想加速"的冲动','步频维持 170+（低于 165 需关注）','补水：跑前 200ml，跑后 300ml + 电解质','跑后 30min 内补充 20g 蛋白','确认 Garmin 电量','提踵仅在小腿紧张时做，无紧张则省略']
+},
+{
+  id:'11-14', d:'11/14', wd:'周六', type:'mob', title:'抗阻 / 垫上运动', tag:'标准版',
+  meta:'跑后恢复 · 髋核心维护 · 15–20min', week:1,
+  items:['抗阻 / 垫上运动（标准版）'],
+  goals:['5km 跑后髋关节 / 核心恢复性维护','维持臀中肌募集（膝关节稳定性）','核心抗旋转能力','总时长 15–20min，RPE ≤3/10'],
+  no:['禁止引起膝关节不适（直腿抬高膝痛则跳过）','禁止屏息','禁止加量或加组','禁止因"昨天跑了"而跳过'],
+  focus:['对比 11/12 体感：是否更轻松（适应性信号）','蚌式臀中肌发力感是否更明显','侧桥能否 45 秒不塌腰','鸟狗对侧伸展时腰部是否稳定','提踵按需','若感到疲劳 → 跑步恢复不足，需告知']
+},
+{
+  id:'11-15', d:'11/15', wd:'周日', type:'run', title:'轻松跑 5km', tag:'跑步',
+  meta:'7:30/km · 心率漂移 <3bpm', week:1,
+  items:['轻松跑 5.0km','当晚可选：小腿提踵 15 次 × 2 组'],
+  goals:['配速 7:30/km（与 11/13 一致）','平均心率 <140，峰值 <152','对比 11/13：配速更稳、心率更低','心率漂移（排除 km1）< 3bpm'],
+  no:['同 11/13','禁止与周五比较后产生"今天更好可以加速"的想法','禁止最后 1km 冲刺'],
+  focus:['每公里配速偏差 <15 秒','体感是否比周五更轻松','心率漂移用修正算法（排除 km1）','为周二腿部力量做体感记录','提踵按需']
+},
+{
+  id:'11-16', d:'11/16', wd:'周一', type:'mob', title:'抗阻 / 垫上运动', tag:'标准版',
+  meta:'髋部激活 · 为腿部力量预热', week:1,
+  items:['抗阻 / 垫上运动（标准版）'],
+  goals:['周末两跑后的髋 / 核心恢复','为周二腿部力量做髋部激活（蚌式、臀桥预热）','维持核心稳定','15–20min，RPE ≤3/10'],
+  no:['禁止加量（这是激活，不是训练）','禁止引起腰部不适（姿势变形则缩短时间）','禁止屏息'],
+  focus:['连续 2 天跑步的累积疲劳评估','晨脉连续 2 天 >58 → 周二峰值降至 40kg','蚌式为明日 RDL 预热臀中肌','臀桥感受臀大肌（RDL 主动肌）','可选 10min 泡沫轴（股四头、腘绳、小腿）','今晚准备周二力量装备']
+},
+{
+  id:'11-17', d:'11/17', wd:'周二', type:'lift', title:'力量 · 腿部', tag:'赛前最后一次',
+  meta:'RDL 45–50kg · RIR ≥3 · 组数 -1', week:1,
+  items:['RDL（杠铃金字塔，减量）','可选：高脚杯深蹲 2 组（16kg × 10，体感好时）','不做抗阻 / 垫上（不叠加）'],
+  goals:['维持下肢力量与后链，不做突破','峰值组 RDL 45–50kg','RIR ≥ 3（taper 期更保守）','总组数 = 常规量 -1'],
+  no:['禁止冲重量（峰值不超过 50kg）','禁止力竭（RIR <2 绝对禁止）','禁止 Belt 松扣或姿势变形硬上','力量后 ≥30h 内禁止跑步 / 骑行','禁止同日加入抗阻 / 垫上'],
+  focus:['背部中立位（脊柱无屈伸）','髋铰链主导，膝微屈不前移','顶峰夹臀 1 秒','组间休息 2–3min','动作质量 > 重量（离心 3 秒）','训练后拉伸腘绳 / 臀大肌','训练后 25g 蛋白 + 快碳'],
+  note:'排期说明：腿部力量从原计划周一调至周二 — 11/15 周日跑后，周一垫上激活，周二才满足"跑 → 力 ≥30h"。'
+},
+{
+  id:'11-18', d:'11/18', wd:'周三', type:'mob', title:'抗阻 / 垫上运动', tag:'标准版',
+  meta:'RDL 后恢复 · 髋灵活性', week:2,
+  items:['抗阻 / 垫上运动（标准版）'],
+  goals:['RDL 后肌糖原与神经恢复性维护','髋部灵活性恢复（蚌式、臀桥轻激活）','核心稳定维持','15–20min，RPE ≤3/10'],
+  no:['禁止加重 RDL 后酸痛（腘绳极酸则跳过臀桥）','禁止屏息','禁止加量'],
+  focus:['晨起脉搏（RDL 次日 >58 需关注）','腘绳 / 臀大肌酸痛程度','酸痛 >72h → 下次 RDL 峰值从 40kg 起步','蚌式感受臀中肌，而非腰部代偿','直腿抬高：腘绳酸痛明显则减至 30°','提踵按需','可做轻度拉伸（非训练）']
+},
+{
+  id:'11-19', d:'11/19', wd:'周四', type:'run', title:'轻松跑 6km', tag:'本周最长',
+  meta:'7:30/km · 平均心率 <142', week:2,
+  items:['轻松跑 6.0km','当晚可选：小腿提踵 15 次 × 2 组'],
+  goals:['配速 7:30/km','平均心率 <142，峰值 <152','Taper 期最长一次跑步，维持跑感','检验 11/17 腿部力量后的状态'],
+  no:['禁止因"只多 1km"而加速','禁止最后 1km 冲刺','禁止心率 >152','禁止跑后"还能再跑"而加量'],
+  focus:['第 4–5km 心率稳定（不应明显爬升）','补水 150ml 或跑前充分补','步频维持 170+','心率漂移 >5bpm = 疲劳未恢复，需告知','跑后 30min 内 20g 蛋白','提踵按需']
+},
+{
+  id:'11-20', d:'11/20', wd:'周五', type:'mob', title:'抗阻 / 垫上运动', tag:'标准版',
+  meta:'6km 后恢复 · 赛前最后一次标准版前', week:2,
+  items:['抗阻 / 垫上运动（标准版）'],
+  goals:['6km 跑后髋 / 核心恢复性维护','维持臀中肌募集','核心抗旋转能力','15–20min，RPE ≤3/10'],
+  no:['禁止加量','禁止屏息','禁止引起膝关节不适的动作'],
+  focus:['膝、踝关节感受（6km 后恢复评估）','6km 恢复速度 vs 5km','晨脉 >60 → 周六背部再减 1 组','蚌式：6km 后髋部是否稳定','平板：是否比上周更稳','今晚准备周六背部装备']
+},
+{
+  id:'11-21', d:'11/21', wd:'周六', type:'back', title:'力量 · 背部', tag:'赛前最后一次',
+  meta:'固定模板 · 组数 -2 · 面拉 30kg', week:2,
+  items:['背部固定模板（组数 -2，重量不变）','不做抗阻 / 垫上（不叠加）'],
+  goals:['维持背部肌肥大与肩胛稳定','肩袖维护：面拉 30kg × 12','RIR ≥ 3','这是赛前最后一次背部训练'],
+  no:['禁止恢复标准组数','禁止面拉 >30kg','禁止力竭','禁止加腿部动作','禁止同日做抗阻 / 垫上'],
+  focus:['宽位下拉：肩胛下沉后启动','坐姿划船：顶峰后缩，回放控制','面拉：外旋终点拇指向后','Pallof：躯干正直，不憋气','单臂划船：弱侧先，注意对称','30min 内补 20g 蛋白'],
+  note:'排期说明：11/19 跑后需 48h 恢复，周五垫上恢复，周六才满足"跑 → 力 ≥30h"。'
+},
+{
+  id:'11-22', d:'11/22', wd:'周日', type:'mob', title:'抗阻 / 垫上运动', tag:'减量版',
+  meta:'~10min · RPE ≤2 · 赛前最后一次垫上', week:2,
+  items:['抗阻 / 垫上运动（减量版：蚌式 2 / 臀桥 2 / 侧桥 30s×2 / 平板 30s×1 / 鸟狗 8×1）'],
+  goals:['背部训练后恢复性维护','髋部轻激活（为周一最后一跑准备）','核心维持','~10min，RPE ≤2/10','赛前最后一次抗阻 / 垫上'],
+  no:['禁止标准版（今天必须减量版）','禁止任何动作引起疲劳','禁止屏息'],
+  focus:['晨起脉搏','背部异常酸痛（肩关节不适需关注）','蚌式轻激活即可','臀桥轻幅度，不追求顶峰','侧桥 30 秒，身体正直','平板 30 秒，腰部稳定','鸟狗 8 次，控制质量','今晚准备周一跑步装备','心理建设：从明天起进入绝对休息']
+},
+{
+  id:'11-23', d:'11/23', wd:'周一', type:'run', title:'轻松跑 4km', tag:'赛前最后一跑',
+  meta:'7:30/km · 平均心率 <138 · 峰值 <148', week:2,
+  items:['轻松跑 4.0km','不做任何其他训练'],
+  goals:['配速 7:30/km（略慢于目标比赛配速）','平均心率 <138，峰值 <148','保持神经肌肉募集，不疲劳','赛前最后一次跑步，检验状态'],
+  no:['禁止加速（任何理由）','禁止冲刺','禁止心率 >152','禁止"还能再跑"而加量','禁止当晚做抗阻 / 垫上'],
+  focus:['跑后体感轻松（RPE 3–4/10）','心率漂移 <3bpm','每公里偏差 <10 秒','跑后蛋白 + 快碳','从明天起不再进行任何训练']
+},
+{
+  id:'11-24', d:'11/24', wd:'周二', type:'rest', title:'完全休息', tag:'绝对休息期 D1',
+  meta:'零训练 · 糖原储备开始', week:3,
+  items:['完全休息（零训练）'],
+  goals:['绝对休息第 1 天','肌糖原开始储备','心理状态调整（接受不训练）'],
+  no:['禁止任何形式的训练（含垫上）','禁止走路 >30min','禁止刷 Strava / TrainingPeaks'],
+  focus:['晨脉应回到 55 或更低','碳水比例提升至 60–70%','水分充足','睡眠 8h+','可做 5min 轻度拉伸']
+},
+{
+  id:'11-25', d:'11/25', wd:'周三', type:'rest', title:'完全休息', tag:'碳水加载 D1',
+  meta:'碳水 568–710g · 水 2.5–3L', week:3,
+  items:['完全休息（零训练）'],
+  goals:['碳水加载第 1 天','肌糖原超量恢复'],
+  no:['禁止训练','禁止高纤维食物','禁止新食物'],
+  focus:['碳水 8–10g/kg（71kg → 568–710g/日）','优先：白米饭、面条、香蕉、白面包、土豆','蛋白维持正常量','脂肪适量减少','水分 2.5–3L']
+},
+{
+  id:'11-26', d:'11/26', wd:'周四', type:'rest', title:'完全休息', tag:'碳水加载 D2',
+  meta:'少量多餐 · 观察体重', week:3,
+  items:['完全休息（零训练）'],
+  goals:['碳水加载第 2 天','身体轻盈感（不因高碳水腹胀）'],
+  no:['禁止训练','禁止高糖高脂组合（炸鸡、甜点）','禁止酒精'],
+  focus:['继续高碳水（米饭、面条为主）','少量多餐（4–5 餐）','体重 +0.5–1kg 属正常（水与糖原）','保持轻松心态']
+},
+{
+  id:'11-27', d:'11/27', wd:'周五', type:'rest', title:'完全休息', tag:'赛前调整',
+  meta:'碳水略降 · 22:00 上床', week:3,
+  items:['完全休息（零训练）'],
+  goals:['身体完全恢复','肠胃适应期结束'],
+  no:['禁止训练','禁止尝试新食物','禁止 14:00 后摄入咖啡因'],
+  focus:['碳水比例 60–70%，总量略降（避免腹胀）','水分充足但不过量','今晚 22:00 前上床','最后一次检查装备清单']
+},
+{
+  id:'11-28', d:'11/28', wd:'周六', type:'rest', title:'完全休息', tag:'整理装备',
+  meta:'早餐模拟 · 21:30 上床 · 2–3 个闹钟', week:3,
+  items:['完全休息（零训练）'],
+  goals:['身体巅峰状态','心理调整到"比赛模式"'],
+  no:['禁止训练','禁止逛展会过度步行','禁止尝试新装备'],
+  focus:['装备清单逐项确认（见"装备"页）','早餐模拟比赛日（相同食物）','21:30 前上床','定好 2–3 个闹钟','号码布提前别好']
+},
+{
+  id:'11-29', d:'11/29', wd:'周日', type:'race', title:'千岛湖半程马拉松', tag:'比赛日',
+  meta:'21.0975km · 心率闸门 152 · 负分割', week:3,
+  items:['半程马拉松 21.0975km'],
+  goals:['安全完赛，享受比赛','心率闸门 152 严格执行','负分割策略（后半段不加速，但不掉速）'],
+  no:['禁止起跑过快（前 3km 严格 7:30）','禁止跟跑他人配速','禁止最后 1km 冲刺（上限 160）','禁止错过补给站'],
+  focus:['早餐：赛前 2.5–3h，熟悉的食物','起跑前 15min：能量胶 1 + 水 150ml','60min：能量胶 1 + 水','90min：能量胶 1 + 盐丸 1 + 水','心率 >150 主动降速','每 5km 自查：能否完整说一句话','核心原则：复制 11/03 的感觉 — 稳、慢、可控']
+}
+];
+
+const SKIPS = [
+  ['冲刺 / 间歇跑（4×400m）','Taper 期禁止无氧刺激：消耗糖原、增加肌纤维微损伤，对他汀使用者恢复代价过高。'],
+  ['长距离（14km）','最后一次长距离应在 taper 开始前完成；赛前 3 周内不再安排 >10km。'],
+  ['最大摄氧量训练','Taper 期目标是维持而非提升，刺激性与恢复代价不成正比。'],
+  ['冲刺训练','与间歇同理，不需要神经爆发力刺激。'],
+  ['FTP 训练 / 测试','FTP 维持 230W 即可，赛前不做阈值训练，避免 CNS 疲劳。'],
+  ['骑行','恢复窗口优先留给跑步维持，计划内 0 次。'],
+  ['力量 · 臀部（孤立）','已并入腿部：RDL 同时覆盖臀大肌与腘绳肌。'],
+  ['力量 · 股四头肌（孤立）','腿屈伸已退出主项；高脚杯深蹲留到冬训周期。']
+];
+
+const GEAR = [
+  '跑鞋（已磨合，不要新鞋）',
+  '速干袜（不要棉袜）',
+  '短裤 + 速干 T 恤',
+  '能量胶 × 3（起跑前 15min / 60min / 90min）',
+  '盐丸 × 1（90min）',
+  '凡士林（腋下、大腿内侧、脚趾）',
+  '号码布 + 别针（提前别好）',
+  'Garmin 手表（充满电）',
+  '赛后干衣服 + 拖鞋',
+  '身份证（领物用）'
+];
+
+const RACE = new Date(2026,10,29);
+const START = new Date(2026,11-1,12);
+const WEEK_LABEL = {1:'第 1 周', 2:'第 2 周', 3:'第 3 周'};
+const WEEK_RANGE = {1:'11/12 – 11/17', 2:'11/18 – 11/23', 3:'11/24 – 11/29'};
+const WEEK_NOTE = {1:'跑 10km · 腿 1 · 垫上 2', 2:'跑 10km · 背 1 · 垫上 3', 3:'全休 6 天 → 起跑'};
+
+/* ═══════════ 状态 ═══════════ */
+const KEY_DONE='qdh.done.v1', KEY_GEAR='qdh.gear.v1';
+const load=(k,f)=>{try{return JSON.parse(localStorage.getItem(k))||f}catch(e){return f}};
+const save=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+let done = new Set(load(KEY_DONE,[]));
+let gear = new Set(load(KEY_GEAR,[]));
+let filter = 'all';
+
+/* ═══════════ 渲染：日程 ═══════════ */
+const tl = document.getElementById('timeline');
+
+function dayHTML(d){
+  return `<article class="day" data-type="${d.type}" data-id="${d.id}" data-week="${d.week}">
+    <div class="head">
+      <div class="date"><div class="d">${d.d.split('/')[1]}</div><div class="w">${d.wd}</div></div>
+      <div class="main">
+        <div class="d-title">${d.title}${d.tag?`<span class="tag">${d.tag}</span>`:''}<span class="now" hidden>今天</span></div>
+        <div class="meta">${d.meta}</div>
+      </div>
+      <div class="tick" data-tick="${d.id}" title="标记完成">✓</div>
+      <div class="chev">›</div>
+    </div>
+    <div class="body"><div class="body-in">
+      <div class="sec pill"><h4>训练项目</h4><ul>${d.items.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="sec"><h4>目标</h4><ul>${d.goals.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="sec no"><h4>禁忌</h4><ul>${d.no.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      <div class="sec"><h4>重点关注</h4><ul>${d.focus.map(x=>`<li>${x}</li>`).join('')}</ul></div>
+      ${d.note?`<div class="note">${d.note}</div>`:''}
+    </div></div>
+  </article>`;
+}
+
+function render(){
+  let html='';
+  [1,2,3].forEach(w=>{
+    const ds = DAYS.filter(d=>d.week===w);
+    html += `<section class="week" data-week="${w}">
+      <div class="week-head"><h2>${WEEK_LABEL[w]}</h2><span>${WEEK_RANGE[w]}</span>
+      <em class="wk-note">${WEEK_NOTE[w]}</em>
+      <span class="wk-bar" data-wkbar="${w}"></span></div>
+      ${ds.map(dayHTML).join('')}
+    </section>`;
+  });
+  tl.innerHTML = html;
+  applyState();
+}
+
+/* ═══════════ 状态应用 ═══════════ */
+function applyState(){
+  const today = new Date(); const iso = `${today.getFullYear()}-${String(today.getMonth()+1).padStart(2,'0')}-${String(today.getDate()).padStart(2,'0')}`;
+  document.querySelectorAll('.day').forEach(el=>{
+    const id = el.dataset.id;
+    const fullId = '2026-'+id;
+    el.classList.toggle('done', done.has(id));
+    const isToday = fullId === iso;
+    el.classList.toggle('today', isToday);
+    el.querySelector('.now').hidden = !isToday;
+    el.style.display = (filter==='all' || el.dataset.type===filter) ? '' : 'none';
+  });
+  // 周条
+  [1,2,3].forEach(w=>{
+    const ds = DAYS.filter(d=>d.week===w);
+    const c = ds.filter(d=>done.has(d.id)).length;
+    const bar = document.querySelector(`[data-wkbar="${w}"]`);
+    if(bar) bar.textContent = `${c}/${ds.length}`;
+  });
+  // 进度
+  const c = DAYS.filter(d=>done.has(d.id)).length;
+  document.getElementById('pgText').textContent = `已完成 ${c} / ${DAYS.length} 天`;
+  document.getElementById('cdBar').style.width = (c/DAYS.length*100)+'%';
+  // 隐藏空周
+  [1,2,3].forEach(w=>{
+    const sec = document.querySelector(`.week[data-week="${w}"]`);
+    if(!sec) return;
+    const vis = [...sec.querySelectorAll('.day')].some(el=>el.style.display!=='none');
+    sec.style.display = vis ? '' : 'none';
+  });
+}
+
+/* ═══════════ 交互 ═══════════ */
+tl.addEventListener('click', e=>{
+  const tick = e.target.closest('[data-tick]');
+  if(tick){
+    e.stopPropagation();
+    const id = tick.dataset.tick;
+    done.has(id) ? done.delete(id) : done.add(id);
+    save(KEY_DONE,[...done]);
+    applyState();
+    return;
+  }
+  const head = e.target.closest('.head');
+  if(!head) return;
+  const card = head.parentElement;
+  const body = card.querySelector('.body');
+  const open = card.classList.toggle('open');
+  body.style.maxHeight = open ? body.scrollHeight + 'px' : '0px';
+  card.querySelector('.chev').style.transform = open ? 'rotate(90deg)' : '';
+});
+
+document.getElementById('filters').addEventListener('click', e=>{
+  const b = e.target.closest('[data-f]');
+  if(!b) return;
+  filter = b.dataset.f;
+  document.querySelectorAll('#filters .chip').forEach(x=>x.classList.toggle('on', x===b));
+  applyState();
+});
+
+document.getElementById('tabs').addEventListener('click', e=>{
+  const b = e.target.closest('[data-view]');
+  if(!b) return;
+  document.querySelectorAll('#tabs button').forEach(x=>x.classList.toggle('on', x===b));
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on', v.id==='view-'+b.dataset.view));
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+
+/* 装备 */
+const gl = document.getElementById('gearList');
+gl.innerHTML = GEAR.map((g,i)=>`<div class="gear-item ${gear.has(String(i))?'on':''}" data-g="${i}">
+  <div class="box">✓</div><div class="g-name">${g}</div></div>`).join('');
+
+function gearProgress(){
+  const n = [...gear].filter(k => GEAR[+k] !== undefined).length;
+  document.getElementById('gearProgTxt').textContent = n === GEAR.length ? '全部备齐 ✓' : `已备齐 ${n} / ${GEAR.length}`;
+  document.getElementById('gearProgBar').style.width = (n/GEAR.length*100)+'%';
+}
+gearProgress();
+
+gl.addEventListener('click', e=>{
+  const it = e.target.closest('[data-g]');
+  if(!it) return;
+  const k = it.dataset.g;
+  gear.has(k) ? gear.delete(k) : gear.add(k);
+  save(KEY_GEAR,[...gear]);
+  it.classList.toggle('on', gear.has(k));
+  gearProgress();
+});
+
+/* 未选项目 */
+document.getElementById('skipList').innerHTML = SKIPS.map(([t,r])=>
+  `<details class="mini"><summary>${t}</summary><p>${r}</p></details>`).join('');
+
+/* 重置 */
+document.getElementById('resetBtn').addEventListener('click', ()=>{
+  if(!confirm('清除所有打卡和装备勾选？')) return;
+  done.clear(); gear.clear(); save(KEY_DONE,[]); save(KEY_GEAR,[]);
+  applyState(); gearProgress();
+  document.querySelectorAll('.gear-item').forEach(x=>x.classList.remove('on'));
+});
+
+/* ═══════════ 倒计时 ═══════════ */
+function tickClock(){
+  const now = new Date();
+  const t0 = new Date(now.getFullYear(),now.getMonth(),now.getDate());
+  const r0 = new Date(RACE.getFullYear(),RACE.getMonth(),RACE.getDate());
+  const days = Math.round((r0-t0)/86400000);
+  const num = document.getElementById('cdNum');
+  const unit = document.getElementById('cdUnit');
+  if(days > 0){ num.textContent = days; unit.textContent = '天后起跑'; }
+  else if(days === 0){ num.textContent = '今天'; unit.textContent = '比赛日 · 稳住'; }
+  else { num.textContent = Math.abs(days); unit.textContent = '天前已完赛'; }
+
+  const iso = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+  const d = DAYS.find(x=>'2026-'+x.id===iso);
+  document.getElementById('todayText').textContent = d ? `今日 ${d.d} · ${d.title}` : '';
+}
+
+render();
+tickClock();
+setTimeout(()=>{
+  const t = document.querySelector('.day.today');
+  if(t) t.scrollIntoView({block:'center', behavior:'auto'});
+}, 60);
+</script>
+</body>
+</html>
